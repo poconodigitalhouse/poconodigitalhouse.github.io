@@ -43,7 +43,7 @@ h3 {
 
 p {
 	font-family: calibreRegular,Helvetica, Arial, Sans-Serif;
-	font-size: 18px;
+	font-size: 16px;
 	line-height:22px;
 	margin:0;
 }
@@ -55,46 +55,55 @@ ul {
 
 .main-nav{
 	font-family:abolition;
-	font-size: 32px;
-	letter-spacing: 1px	
+	font-size: 40px;
+	letter-spacing: 2px;	
+	color:#4A4A4A;
 }
 
 .contact{
 	position:fixed;
-	top:30px;
-	left:30px;
+	top:60px;
+	left:60px;
 	/*background-color: #0033ff*/
 
 }
 
 .about{
 	position:fixed;
-	top:30px;
-	right:30px;
+	top:60px;
+	right:60px;
 	/*background-color: #0033ff*/
 
 }
 
 .instagram{
 	position:fixed;
-	bottom:30px;
-	left:30px;
+	bottom:60px;
+	left:60px;
 	/*background-color: #0033ff*/
 
 }
 
 .blog{
 	position:fixed;
-	bottom:30px;
-	right:30px;
+	bottom:60px;
+	right:60px;
 	/*background-color: #0033ff*/
 
 }
 
+a{
+	text-decoration: none;
+	color: #000000;
+}
+
 a.logo img{
 	display: block;
-	margin: 36px auto 0 auto;
+	margin: 64px auto 0 auto;
+	/*position:fixed;*/
 }
+
+
 
 /*body positioning*/
 
