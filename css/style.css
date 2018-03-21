@@ -15,29 +15,92 @@
 }
 
 .bgcolor {
-	color:#333333;
+	color:#133B60;
 }
 
 li.contact:hover::after {
-     width: 100px; 
+     width: 45px; 
 }
 
 li.contact::after {
     content: "";
-    background-color: pink;
-    height: 10px;
-    width: 100px;
+    background-color: #DCAE6D;
+    height: 2px;
+    width: 0px;
     display: block;
     transition-property: width;
-    transition-duration: 350ms;
+    transition-duration: 150ms;
     transition-timing-function: ease-in-out;
     transition-delay: 0ms;
     position: relative;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-52%);
+    margin-top: 10px;
 }
 
+li.about:hover::after {
+     width: 45px; 
+}
+
+li.about::after {
+    content: "";
+    background-color: #DCAE6D;
+    height: 2px;
+    width: 0px;
+    display: block;
+    transition-property: width;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0ms;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-52%);
+    margin-top: 10px;
+}
+
+li.instagram:hover::after {
+     width: 45px; 
+}
+
+li.instagram::after {
+    content: "";
+    background-color: #DCAE6D;
+    height: 2px;
+    width: 0px;
+    display: block;
+    transition-property: width;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0ms;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-52%);
+    margin-top: 10px;
+}
+
+li.blog:hover::after {
+     width: 45px; 
+}
+
+li.blog::after {
+    content: "";
+    background-color: #DCAE6D;
+    height: 2px;
+    width: 0px;
+    display: block;
+    transition-property: width;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0ms;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-52%);
+    margin-top: 10px;
+}
 
 .videobg {
 	width: 200vw;
@@ -60,12 +123,12 @@ li.contact::after {
 }
 
 @font-face {
-    font-family: 'calibreSemibold';
+    font-family: 'calibreRegular';
     src: url(../fonts/calibre-regular.otf);
 }
 
 @font-face {
-    font-family: 'calibreRegular';
+    font-family: 'calibreSemibold';
     src: url(../fonts/calibre-semibold.otf);
 }
 
@@ -76,12 +139,14 @@ h2 {
 	font-weight: 400;
 	font-size: 32px;
 	line-height: 38px;
+	-webkit-font-smoothing: antialiased
 }
 
 h3 {
 	font-family: calibreSemibold, Helvetica, Arial, Sans-Serif;
 	font-size:18px;
 	margin:0 0 12px 0;
+	-webkit-font-smoothing: antialiased
 }
 
 p {
@@ -89,6 +154,7 @@ p {
 	font-size: 16px;
 	line-height:22px;
 	margin:0;
+	-webkit-font-smoothing: antialiased
 }
 /*navigation*/
 
@@ -98,9 +164,10 @@ ul {
 
 .main-nav{
 	font-family:abolition;
-	font-size: 40px;
+	font-size: 32px;
 	letter-spacing: 2px;	
 	color:#ffffff;
+	-webkit-font-smoothing: antialiased
 }
 
 .contact{
