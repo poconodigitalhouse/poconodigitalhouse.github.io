@@ -221,7 +221,8 @@ a.logo{
 /*body positioning*/
 
 .innercontent{
-	padding: 135px 0;
+	padding-top: 15%;
+	padding-bottom:100px;
 	/*max-width: 856px;*/
 	padding-right:20%;
 	padding-left:20%;
