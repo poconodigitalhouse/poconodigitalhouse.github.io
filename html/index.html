@@ -3,6 +3,25 @@
 <head>
 <title>Pocono Digital House | Video Production</title>
 <link rel="stylesheet" href="../css/style.css">
+<script type="text/javascript">
+	 var modal = document.querySelector(".modal");
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+</script>
 </head>
 <body>
 	<div class="videobg">
@@ -40,9 +59,16 @@
 		<a href="https://www.instagram.com/pocono_digital/" target="_blank">blog</a>
 	</ul>
 </nav>
-
-
-
+<body>
+<div class="playbtn">
+	<img alt="playbutton" src="../img/btnplay.svg"/>
+	</button>
+<div class="modal">
+	<div class="modal-content">
+		<span class="close-button">&times;</span>
+		<h1>Hell, I am a modal!</h1>
+	</div>
+</div>
 <script src="https://player.vimeo.com/api/player.js" type="text/javascript" />
 </body>
 </html>
