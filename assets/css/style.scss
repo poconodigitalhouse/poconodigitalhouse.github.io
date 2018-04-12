@@ -1,0 +1,11 @@
+---
+# This file in this location (/assets/css/style.css)...
+# with this Front Matter (the "---" sections at the top of certain files)...
+# ... is how Jekyll knows where to put our compiled css
+# The real Sass/SCSS/CSS is in the `_sass` folder.
+---
+
+$base-url: "{{ site.url }}";
+
+@import "normalize";
+@import "style";
