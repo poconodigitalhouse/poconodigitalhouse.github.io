@@ -1,0 +1,19 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Pocono Digital House {% if page.title %}| {{ page.title }}{% endif %} </title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% comment %}
+    <!--
+      TODO: !!!
+      <link rel="shortcut icon" href="/images/favicon.ico" />
+    -->
+  {% endcomment %}
+
+  {% include meta-open-graph.html %}
+  {% include meta-apple.html %}
+
+  {% include google-analytics.html %}
+</head>

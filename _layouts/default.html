@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% if page.type == 'home' %}
+      <div class="videobg">
+        <div class="sizing">
+          <iframe
+            id="home-page-video"
+            src="https://player.vimeo.com/video/261644461?background=1&title=0&byline=0&portrait=0&playsinline=true"
+            frameborder="0"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    {% elsif page.bg_image %}
+      {% for file in site.static_files %}
+        {% if file.name == page.bg_image %}
+          <div class="aboutbg" style="background-image: url({{ file.path }});"></div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% include header.html %}
+
+    {% include nav.html %}
+
+    <main>
+      {{ content }}
+    </main>
+
+    {% if page.type == 'home' %}
+      <script src="https://player.vimeo.com/api/player.js"></script>
+      <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% endif %}
+  </body>
+</html>
