@@ -26,11 +26,7 @@ body {
     color: #133B60;
 }
 
-li.contact:hover::after {
-    width: 45px; 
-}
-
-li.contact::after {
+nav li::after {
     content: "";
     background-color: #DCAE6D;
     height: 2px;
@@ -47,78 +43,9 @@ li.contact::after {
     margin-top: 10px;
 }
 
-li.about.current{
-    content: "";
-    background-color: #DCAE6D;
-    height: 2px;
-    display: block;
-    position: relative;
-    top: 0;
-    left: 50%;
-    margin-top: 10px;
-}
-
-li.about:hover::after {
+nav li:hover::after,
+nav li.current::after {
     width: 45px; 
-}
-
-li.about::after {
-    content: "";
-    background-color: #DCAE6D;
-    height: 2px;
-    width: 0px;
-    display: block;
-    transition-property: width;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0ms;
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-52%);
-    margin-top: 10px;
-}
-
-li.instagram:hover::after {
-    width: 45px; 
-}
-
-li.instagram::after {
-    content: "";
-    background-color: #DCAE6D;
-    height: 2px;
-    width: 0px;
-    display: block;
-    transition-property: width;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0ms;
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-52%);
-    margin-top: 10px;
-}
-
-li.blog:hover::after {
-    width: 45px; 
-}
-
-li.blog::after {
-    content: "";
-    background-color: #DCAE6D;
-    height: 2px;
-    width: 0px;
-    display: block;
-    transition-property: width;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0ms;
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-52%);
-    margin-top: 10px;
 }
 
 .videobg {
@@ -278,10 +205,8 @@ a.logo {
 }
 
 .morecontent {
-    height: 100vh;
-    width: 100vw;
     background-color: #F9F9E2;
-    padding-top: 100px;
+    padding: 100px 0px;
 }
 
 .body1 {

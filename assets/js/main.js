@@ -186,19 +186,19 @@ function initBgVideo() {
   positionBgVideo();
 
   // var testId = 76979871;
-  // var node = document.getElementById('bg-play-pause');
-  // node.addEventListener('click', function(e) {
-  //   e.preventDefault();
-  //   bg_player
-  //     .getPaused()
-  //     .then(function(paused) {
-  //       if (paused) {
-  //         bg_player.play();
-  //       } else {
-  //         bg_player.pause();
-  //       }
-  //     })
-  // });
+  var node = document.getElementById('bg-play-pause');
+  node.addEventListener('click', function(e) {
+    e.preventDefault();
+    bg_player
+      .getPaused()
+      .then(function(paused) {
+        if (paused) {
+          bg_player.play();
+        } else {
+          bg_player.pause();
+        }
+      })
+  });
 }
 
 // (function ( document, window ) {
