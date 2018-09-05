@@ -1,23 +1,15 @@
 ---
 # 
-# This page is empty because everything is taken care of in the layout
+# "Demo Reel ▶︎" button
 #
 layout: default
 type: home
 ---
-<!--
--->
-<div style="
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translateX(-50%);
-  font-family: Helvetica, Arial, sans;
-  background: rgba(0,0,0,0.5);
-  padding: 1em;
-  border-radius: 3px;
-">
-  <a id="bg-play-pause" href="#">play / pause</a>
+
+<div class="demo-button">
+  <!-- HREF = link to vimeo demo reel -->
+  <!-- DATA-DEMO-VIDEO-ID = video id (likely repeated from link) -->
+  <a href="https://vimeo.com/262315719" data-modal="open-btn" data-demo-video-id="262315719">
+    {% include demo-reel-button.html %}
+  </a>
 </div>
-<!--
--->

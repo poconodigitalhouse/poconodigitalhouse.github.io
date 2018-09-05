@@ -6,15 +6,9 @@
   <body>
 
     {% if page.type == 'home' %}
-      <div class="videobg">
-        <div class="sizing">
-          <iframe
-            id="home-page-video"
-            src="https://player.vimeo.com/video/261644461?background=1&title=0&byline=0&portrait=0&playsinline=true"
-            frameborder="0"
-            webkitallowfullscreen mozallowfullscreen allowfullscreen
-          ></iframe>
-        </div>
+      <!-- DATA-BG-VIDEO-ID = id of the background video -->
+      <div class="bg-video" data-js="bg-video" data-bg-video-id="261644461">
+        <div class="bg-video__sizing" data-bg-video-player-target></div>
       </div>
     {% elsif page.bg_image %}
       {% for file in site.static_files %}
@@ -33,6 +27,7 @@
     </main>
 
     {% if page.type == 'home' %}
+      {% include demo-modal.html %}
       <script src="https://player.vimeo.com/api/player.js"></script>
       <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     {% endif %}
