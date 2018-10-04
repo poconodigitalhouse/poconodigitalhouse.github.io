@@ -10,5 +10,15 @@ $base-url: "{{ site.url }}";
 $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
+$color-brand: #dcae6d;
+$color-white: #efefef;
+
+$spacing-tiny: 4px;
+$spacing-small: 8px;
+$spacing-regular: 16px;
+$spacing-large: 28px;
+$spacing-huge: 32px;
+$spacing-mega: 48px;
+
 @import "normalize";
 @import "style";

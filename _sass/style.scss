@@ -1,10 +1,29 @@
 // all variables are defined in /assets/css/style.css
 
+@font-face {
+    font-family: "abolition";
+    src: url($base-url + "/assets/fonts/abolition.otf");
+}
+
+@font-face {
+    font-family: "calibre";
+    font-weight: normal;
+    src: url($base-url + "/assets/fonts/calibre-regular.otf");
+}
+
+@font-face {
+    font-family: "calibre";
+    font-weight: bold;
+    src: url($base-url + "/assets/fonts/calibre-semibold.otf");
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
+    font-size: 16px;
+    //----
     background-color: #F9F9E2;
 }
 
@@ -26,28 +45,6 @@ body {
 
 .bgcolor {
     color: #133B60;
-}
-
-nav li::after {
-    content: "";
-    background-color: #DCAE6D;
-    height: 2px;
-    width: 0px;
-    display: block;
-    transition-property: width;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0ms;
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-52%);
-    margin-top: 10px;
-}
-
-nav li:hover::after,
-nav li.current::after {
-    width: 45px; 
 }
 
 
@@ -204,27 +201,89 @@ nav li.current::after {
     }
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $spacing-huge;
+    text-align: center;
+    font-family: "abolition";
+    margin-top: $spacing-large;
 
+    &__logo {
+        font-size: 32px;
+        line-height: 32px;
+        letter-spacing: 0.5px;
+        color: $color-brand;
+        text-decoration: none;
+        text-transform: uppercase;
+        transform: translateY(-3px); // abolition sits low in its line-height
+    }
+}
 
+.nav {
+    font-family: "calibre";
+    font-weight: normal;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $spacing-huge;
+        position: fixed;
+        color: $color-white;
+        text-decoration: none;
+
+        &--contact {
+            top: $spacing-large;
+            left: $spacing-mega;
+        }
+        &--about {
+            top: $spacing-large;
+            right: $spacing-mega;
+        }
+        &--instagram {
+            bottom: $spacing-large;
+            left: $spacing-mega;
+        }
+        &--blog {
+            right: $spacing-mega;
+            bottom: $spacing-large;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0px;
+            height: 2px;
+            background-color: $color-brand;
+            transition: width 100ms ease-in-out 0ms;
+        }
+
+        &:hover::after,
+        &--current::after {
+            width: 45px; 
+        }
+    }
+}
+
+// ----
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
 
 
 
 /*typography*/
-
-@font-face {
-    font-family: "abolition";
-    src: url($base-url + "/assets/fonts/abolition.otf");
-}
-
-@font-face {
-    font-family: "calibreRegular";
-    src: url($base-url + "/assets/fonts/calibre-regular.otf");
-}
-
-@font-face {
-    font-family: "calibreSemibold";
-    src: url($base-url + "/assets/fonts/calibre-semibold.otf");
-}
 
 h2 {
     font-family: adobe-text-pro, serif;
@@ -261,56 +320,6 @@ ul {
 
 a {
     color:#133B60;
-}
-
-.main-nav {
-    font-family:abolition;
-    font-size: 32px;
-    letter-spacing: 2px;  
-    color:#ffffff;
-    -webkit-font-smoothing: antialiased
-}
-
-.contact {
-    position:fixed;
-    top:60px;
-    left:60px;
-    /*background-color: #0033ff*/
-}
-
-.about {
-    position:fixed;
-    top:60px;
-    right:60px;
-    /*background-color: #0033ff*/
-}
-
-.instagram {
-    position:fixed;
-    bottom:60px;
-    left:60px;
-    /*background-color: #0033ff*/
-}
-
-.blog {
-    position:fixed;
-    bottom:60px;
-    right:60px;
-    /*background-color: #0033ff*/
-}
-
-a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-a.logo {
-    line-height: 0;
-    display: inline-block;
-    position: relative;
-    top: 64px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 
