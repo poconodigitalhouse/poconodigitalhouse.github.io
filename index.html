@@ -7,10 +7,14 @@ type: home
 nav_theme: light
 ---
 
-<div class="demo-button">
-  <!-- HREF = link to vimeo demo reel -->
-  <!-- DATA-DEMO-VIDEO-ID = video id (likely repeated from link) -->
-  <a href="https://vimeo.com/262315719" data-modal="open-btn" data-demo-video-id="262315719">
-    {% include demo-reel-button.html %}
-  </a>
+<div class="home">
+  <div class="demo-button">
+    {% comment %}
+      --> HREF = link to vimeo demo reel
+      --> DATA-DEMO-VIDEO-ID = video id (likely repeated from link)
+    {% endcomment %}
+    <a href="https://vimeo.com/262315719" data-modal="open-btn" data-demo-video-id="262315719">
+      {% include demo-reel-button.html %}
+    </a>
+  </div>
 </div>
