@@ -1,16 +1,16 @@
 <nav class="nav nav--theme-{{ page.nav_theme }}" role="navigation">
-  <a class="nav__item nav__item--home" href="/" title="Home">
+  <a class="nav__item nav__item--home" href="{{ site.baseurl }}{% link index.html %}" title="Home">
     <span>Pocono Digital House</span>
   </a>
   <a
-    class="nav__item nav__item--contact {% if page.url contains 'contact' %}nav__item--current{% endif %}"
-    href="/contact"
+    class="nav__item nav__item--contact {% if page.path contains 'contact' %}nav__item--current{% endif %}"
+    href="{{ site.baseurl }}{% link contact.html %}"
   >
     <span>contact</span>
   </a>
   <a
-    class="nav__item nav__item--about {% if page.url contains 'about' %}nav__item--current{% endif %}"
-    href="/about"
+    class="nav__item nav__item--about {% if page.path contains 'about' %}nav__item--current{% endif %}"
+    href="{{ site.baseurl }}{% link about.html %}"
   >
     <span>about</span>
   </a>
