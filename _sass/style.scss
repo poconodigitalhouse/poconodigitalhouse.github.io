@@ -201,43 +201,36 @@ body {
     }
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: $spacing-huge;
-    text-align: center;
-    font-family: "abolition";
-    margin-top: $spacing-large;
-
-    &__logo {
-        font-size: 32px;
-        line-height: 32px;
-        letter-spacing: 0.5px;
-        color: $color-brand;
-        text-decoration: none;
-        text-transform: uppercase;
-        transform: translateY(-3px); // abolition sits low in its line-height
-    }
-}
 
 .nav {
-    font-family: "calibre";
-    font-weight: normal;
+    font-family: $font-calibre;
     font-size: 20px;
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
     letter-spacing: 0.6px;
 
     &__item {
+        position: fixed;
         display: flex;
         justify-content: center;
         align-items: center;
         height: $spacing-huge;
-        position: fixed;
         color: $color-white;
         text-decoration: none;
 
+        &--home {
+            top: $spacing-large;
+            left: 50%;
+            transform: translate(-50%, -3px); // abolition sits low in its line-height
+
+            font-family: $font-abolition;
+            font-size: 32px;
+            line-height: 32px;
+            letter-spacing: 0.5px;
+            color: $color-brand !important;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
         &--contact {
             top: $spacing-large;
             left: $spacing-mega;
@@ -255,7 +248,7 @@ body {
             bottom: $spacing-large;
         }
 
-        &::after {
+        &:not(#{&}--home)::after {
             content: "";
             display: block;
             position: absolute;
@@ -270,7 +263,7 @@ body {
 
         &:hover::after,
         &--current::after {
-            width: 45px; 
+            width: 45px !important; 
         }
     }
 }
