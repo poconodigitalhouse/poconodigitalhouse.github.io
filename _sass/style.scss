@@ -296,14 +296,23 @@ main {
 }
 
 
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 
-ul {
-    list-style: none;
+    p {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.07;
+        max-width: 45ch;
+        margin: $spacing-small 0;
+    }
 }
 
-a {
-    color:#133B60;
-}
 
 
 /*body positioning*/
@@ -363,5 +372,19 @@ a {
         left: 0;
         height: auto;
         fill: $color-brand;
+
+        &__contact-before {
+            &:nth-child(1) { width: 28px; transform: translate(-390px, -155px); }
+            &:nth-child(2) { width: 20px; transform: translate(-295px, -70px); }
+            &:nth-child(3) { width: 30px; transform: translate(110px, -100px); }
+            &:nth-child(4) { width: 30px; transform: translate(340px, -140px); }
+        }
+        &__contact-after {
+            &:nth-child(1) { width: 12px; transform: translate(-445px, -55px); }
+            &:nth-child(2) { width: 30px; transform: translate(-390px, 100px); }
+            &:nth-child(3) { width: 30px; transform: translate(-140px, 95px); }
+            &:nth-child(4) { width: 18px; transform: translate(190px, 50px); }
+            &:nth-child(5) { width: 28px; transform: translate(420px, 32px); }
+        }
     }
 }
