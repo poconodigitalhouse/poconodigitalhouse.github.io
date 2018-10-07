@@ -190,9 +190,10 @@ body {
 
 
 .nav {
+    position: relative;
+    z-index: 1;
     font-family: $font-calibre;
     font-size: 20px;
-    -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
     letter-spacing: 0.6px;
 
@@ -202,8 +203,7 @@ body {
     }
 
     &--theme-dark &__item {
-        color: $color-text-dark;
-        font-weight: bold;
+        // this is the default
     }
 
     &__item {
@@ -212,6 +212,8 @@ body {
         justify-content: center;
         align-items: center;
         height: $spacing-huge;
+        color: $color-text-dark;
+        font-weight: bold;
         text-decoration: none;
 
         &--home {
