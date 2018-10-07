@@ -276,43 +276,26 @@ main {
         color: $color-text-dark;
     }
 
-/*typography*/
     h3 {
         font-size: inherit;
         line-height: inherit;
     }
 
-h2 {
-    font-family: adobe-text-pro, serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
-    -webkit-font-smoothing: antialiased
     h2, h3, p {
         margin: $spacing-small 0;
     }
 }
 
-h3 {
-    font-family: adobe-text-pro, serif;
-    font-size: 20px;
-    margin:0 0 12px 0;
-    -webkit-font-smoothing: antialiased;
-    color:#133B60;
-}
 
-p {
-    font-family: adobe-text-pro, serif;
-    font-size: 20px;
-    line-height: 26px;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    color:#133B60;
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 
-/*navigation*/
 
 ul {
     list-style: none;
