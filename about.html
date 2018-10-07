@@ -6,7 +6,13 @@ title: About
 <div class="about">
   <div class="about__hero">
     <div class="about__hero-image">
-      <span />
+      <img
+        srcset="{{ '/assets/img/sundance-slider-me.jpg' | relative_url }} 1024w,
+                {{ '/assets/img/sundance-slider-me@2x.jpg' | relative_url }} 2048w,
+                {{ '/assets/img/sundance-slider-me@3x.jpg' | relative_url }} 3072w"
+        sizes="(max-width: 40em) 100vw,
+               620px"
+      />
     </div>
     <div class="about__hero-text">
       {% include trees.html class="about-hero" count=1 %}
@@ -58,7 +64,6 @@ title: About
       srcset="{{ '/assets/img/sundance-slider-me.jpg' | relative_url }} 1x,
               {{ '/assets/img/sundance-slider-me@2x.jpg' | relative_url }} 2x,
               {{ '/assets/img/sundance-slider-me@3x.jpg' | relative_url }} 3x"
-      sizes="100vw"
     />
   </div>
 

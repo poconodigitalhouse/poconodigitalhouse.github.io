@@ -322,8 +322,17 @@ main {
     overflow: hidden;
     margin-top: ($spacing-huge * 2) + $spacing-regular; // account for the nav
 
+    @media ($media-medium) {
+        padding: 0 $spacing-large;
+        margin-top: ($spacing-huge * 2) + $spacing-regular - $spacing-small; // account for the nav
+    }
+
     & > * + * {
         margin-top: $spacing-mega;
+
+        @media ($media-medium) {
+            margin-top: $spacing-large;
+        }
     }
 
     &__hero {
@@ -331,46 +340,75 @@ main {
         align-items: center;
         width: 1280px;
 
+        @media ($media-medium) {
+            display: block;
+            width: 100%;
+        }
+
         & > * + * {
             margin-left: $spacing-mega;
+
+            @media ($media-medium) {
+                margin-top: $spacing-large;
+                margin-left: 0;
+            }
         }
 
         &-image {
             position: relative;
             flex: 0 0 auto;
+            overflow: hidden;
+            width: 620px;
 
-            span {
-                display: inline-block;
-                width: 620px;
-                height: 460px;
-                background: rgba(0,0,0,0.2);
+            @media ($media-medium) {
+                width: calc(100% + #{$spacing-large * 2});
+                margin: 0 $spacing-large * -1;
             }
 
-            &::after {
-                content: "";
-                height: 1px;
-                width: 123%;
-                background: black;
+            img {
                 display: block;
-                position: absolute;
-                top: 0;
-                right: 0;
-                transform: rotate(-36.4deg);
-                transform-origin: right;
+                width: 100%;
+                height: auto;
             }
         }
         &-text {
             flex-basis: 34ch;
+
+            h2 {
+                font-size: 32px;
+                line-height: 1.06;
+
+                @media ($media-medium) {
+                    font-size: 24px;
+                    line-height: 1.08;
+                }
+            }
         }
     }
 
     &__body {
         display: flex;
-        max-width: 704px;
-        transform: translateX(42px); // adjusts to center between bottom nav items
+        max-width: 688px;
+        transform: translateX(22px); // adjusts to center between bottom nav items
+
+        @media ($media-medium) {
+            padding: 0 $spacing-regular;
+            transform: none;
+        }
+
+        @media ($media-medium) {
+            display: block;
+            padding: 0;
+            max-width: none;
+        }
 
         & > * + * {
             margin-left: $spacing-large;
+
+            @media ($media-medium) {
+                margin-top: $spacing-huge;
+                margin-left: 0;
+            }
         }
 
         &-primary {
@@ -391,10 +429,19 @@ main {
     &__footer {
         width: 100%;
 
+        @media ($media-medium) {
+            width: 140%;
+        }
+
         img {
             display: block;
             width: 100%;
             height: auto;
+
+            @media ($media-medium) {
+                width: calc(100% + #{$spacing-large * 2});
+                margin: 0 $spacing-large * -1;
+            }
         }
     }
 }
@@ -411,27 +458,37 @@ main {
         left: 0;
         height: auto;
         fill: $color-brand;
+    }
 
-        &__contact-before {
-            &:nth-child(1) { width: 28px; transform: translate(-390px, -155px); }
-            &:nth-child(2) { width: 20px; transform: translate(-295px, -70px); }
-            &:nth-child(3) { width: 30px; transform: translate(110px, -100px); }
-            &:nth-child(4) { width: 30px; transform: translate(340px, -140px); }
+    &__contact-before {
+        & > :nth-child(1) { width: 28px; transform: translate(-390px, -155px); }
+        & > :nth-child(2) { width: 20px; transform: translate(-295px, -70px); }
+        & > :nth-child(3) { width: 30px; transform: translate(110px, -100px); }
+        & > :nth-child(4) { width: 30px; transform: translate(340px, -140px); }
+    }
+    &__contact-after {
+        & > :nth-child(1) { width: 12px; transform: translate(-445px, -55px); }
+        & > :nth-child(2) { width: 30px; transform: translate(-390px, 100px); }
+        & > :nth-child(3) { width: 30px; transform: translate(-140px, 95px); }
+        & > :nth-child(4) { width: 18px; transform: translate(190px, 50px); }
+        & > :nth-child(5) { width: 28px; transform: translate(420px, 32px); }
+    }
+    &__about-hero {
+        & > :nth-child(1) { width: 20px; transform: translate(310px, -20px); }
+
+        @media ($media-medium) {
+            & > :nth-child(1) { width: 16px; transform: translate(0px, 0px); left: initial; right: 0; }
         }
-        &__contact-after {
-            &:nth-child(1) { width: 12px; transform: translate(-445px, -55px); }
-            &:nth-child(2) { width: 30px; transform: translate(-390px, 100px); }
-            &:nth-child(3) { width: 30px; transform: translate(-140px, 95px); }
-            &:nth-child(4) { width: 18px; transform: translate(190px, 50px); }
-            &:nth-child(5) { width: 28px; transform: translate(420px, 32px); }
-        }
-        &__about-hero {
-            &:nth-child(1) { width: 20px; transform: translate(310px, -70px); }
-        }
-        &__about-body {
-            &:nth-child(1) { width: 30px; transform: translate(-80px, 50px); }
-            &:nth-child(2) { width: 30px; transform: translate(405px, -80px); }
-            &:nth-child(3) { width: 18px; transform: translate(770px, 50px); }
+    }
+    &__about-body {
+        & > :nth-child(1) { width: 30px; transform: translate(-80px, 50px); }
+        & > :nth-child(2) { width: 30px; transform: translate(405px, -80px); }
+        & > :nth-child(3) { width: 18px; transform: translate(770px, 50px); }
+
+        @media ($media-medium) {
+            & > :nth-child(1) { width: 30px; transform: translate(-20px, -50px); left: initial; right: 0; }
+            & > :nth-child(2) { width: 16px; transform: translate(-20px, 185px); left: initial; right: 0; }
+            & > :nth-child(3) { display: none; }
         }
     }
 }

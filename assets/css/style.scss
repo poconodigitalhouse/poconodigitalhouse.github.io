@@ -25,5 +25,8 @@ $spacing-large: 28px;
 $spacing-huge: 32px;
 $spacing-mega: 48px;
 
+$media-medium: "max-width: 62em";
+$media-small: "max-width: 40em";
+
 @import "normalize";
 @import "style";
