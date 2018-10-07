@@ -1,29 +1,39 @@
 <nav class="nav nav--theme-{{ page.nav_theme }}" role="navigation">
-  <a class="nav__item nav__item--home" href="{{ site.baseurl }}{% link index.html %}" title="Home">
+  <input type="checkbox" class="nav__hamburger-checkbox" />
+  <div class="nav__hamburger">
+    <span class="nav__hamburger-line"></span>
+    <span class="nav__hamburger-line"></span>
+    <span class="nav__hamburger-line"></span>
+    <span class="nav__hamburger-line"></span>
+    <span class="nav__hamburger-line"></span>
+  </div>
+  <a class="nav__logo" href="{{ site.baseurl }}{% link index.html %}" title="Home">
     <span>Pocono Digital House</span>
   </a>
-  <a
-    class="nav__item nav__item--contact {% if page.path contains 'contact' %}nav__item--current{% endif %}"
-    href="{{ site.baseurl }}{% link contact.html %}"
-  >
-    <span>contact</span>
-  </a>
-  <a
-    class="nav__item nav__item--about {% if page.path contains 'about' %}nav__item--current{% endif %}"
-    href="{{ site.baseurl }}{% link about.html %}"
-  >
-    <span>about</span>
-  </a>
-  <a
-    class="nav__item nav__item--instagram"
-    href="https://www.instagram.com/pocono_digital/" target="_blank"
-  >
-    <span>instagram</span>
-  </a>
-  <a
-    class="nav__item nav__item--blog"
-    href="https://www.instagram.com/pocono_digital/" target="_blank"
-  >
-    <span>blog</span>
-  </a>
+  <div class="nav__menu">
+    <a
+      class="nav__item nav__item--about {% if page.path contains 'about' %}nav__item--current{% endif %}"
+      href="{{ site.baseurl }}{% link about.html %}"
+    >
+      <span>about</span>
+    </a>
+    <a
+      class="nav__item nav__item--contact {% if page.path contains 'contact' %}nav__item--current{% endif %}"
+      href="{{ site.baseurl }}{% link contact.html %}"
+    >
+      <span>contact</span>
+    </a>
+    <a
+      class="nav__item nav__item--instagram"
+      href="https://www.instagram.com/pocono_digital/" target="_blank"
+    >
+      <span>instagram</span>
+    </a>
+    <a
+      class="nav__item nav__item--blog"
+      href="https://www.instagram.com/pocono_digital/" target="_blank"
+    >
+      <span>blog</span>
+    </a>
+  </div>
 </nav>

@@ -16,7 +16,8 @@ $font-calibre: 'calibre';
 $color-brand: #dcae6d;
 $color-text-light: #efefef;
 $color-text-dark: #133b60;
-$color-background: #f9f9e2;
+$color-background-light: #f9f9e2;
+$color-background-dark: #103a61;
 
 $spacing-tiny: 4px;
 $spacing-small: 8px;
@@ -27,6 +28,9 @@ $spacing-mega: 48px;
 
 $media-medium: "max-width: 62em";
 $media-small: "max-width: 40em";
+
+$nav-height-large: ($spacing-huge * 2) + $spacing-regular;
+$nav-height-small: ($spacing-huge * 2) + $spacing-regular - $spacing-small;
 
 @import "normalize";
 @import "style";

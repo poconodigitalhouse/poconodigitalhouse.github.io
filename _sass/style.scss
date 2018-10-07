@@ -28,7 +28,7 @@ p, blockquote, a, span {
 }
 
 body {
-    background-color: $color-background;
+    background-color: $color-background-light;
     font-family: $font-calibre, arial, sans;
     font-size: 18px;
     line-height: 1.22;
@@ -197,16 +197,21 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.6px;
 
-    &--theme-light &__item {
-        color: $color-text-light;
-        font-weight: normal;
+    @media ($media-medium) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $nav-height-small;
     }
 
-    &--theme-dark &__item {
-        // this is the default
-    }
-
-    &__item {
+    &__item,
+    &__logo,
+    &__hamburger {
         position: fixed;
         display: flex;
         justify-content: center;
@@ -216,19 +221,102 @@ body {
         font-weight: bold;
         text-decoration: none;
 
-        &--home {
-            top: $spacing-large;
-            left: 50%;
-            transform: translate(-50%, -3px); // abolition sits low in its line-height
-
-            font-family: $font-abolition;
-            font-size: 32px;
-            line-height: 32px;
-            letter-spacing: 0.5px;
-            color: $color-brand !important;
-            text-decoration: none;
-            text-transform: uppercase;
+        @media ($media-medium) {
+            position: static;
         }
+    }
+
+    &__item,
+    &__logo,
+    &__hamburger-checkbox {
+        z-index: 1;
+    }
+
+    &__logo {
+        top: $spacing-large;
+        left: 50%;
+        transform: translate(-50%, -3px); // abolition sits low in its line-height
+        font-family: $font-abolition;
+        font-size: 32px;
+        line-height: 32px;
+        letter-spacing: 0.5px;
+        color: $color-brand !important;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        @media ($media-medium) {
+            top: initial;
+            left: initial;
+            transform: translate(0, -3px);
+            height: 100%;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        left: 20px;
+        width: 20px;
+        height: 15px;
+
+        @media ($media-medium) {
+            display: flex;
+        }
+
+        &-line {
+            display: inline-block;
+            width: 100%;
+            height: 3px;
+            background-color: $color-text-dark;
+            transition: all 100ms linear 0ms;
+
+            &:nth-child(4),
+            &:nth-child(5) {
+                position: absolute;
+                top: 6px;
+                background-color: $color-text-light;
+                opacity: 0;
+            }
+        }
+
+        &-checkbox {
+            display: none;
+            position: absolute;
+            left: 15px;
+            width: 32px;
+            height: 32px;
+            opacity: 0;
+
+            @media ($media-medium) {
+                display: inline-block;
+            }
+
+            &:checked { z-index: 2; }
+        }
+    }
+
+    &__menu {
+        @media ($media-medium) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-top: $nav-height-small;
+            padding-bottom: $spacing-huge;
+            background: $color-background-dark;
+        }
+    }
+
+    &__item {
+        @media ($media-medium) {
+            height: auto;
+            color: $color-text-light;
+            padding: $spacing-regular 0;
+
+        }
+
         &--contact {
             top: $spacing-large;
             left: $spacing-mega;
@@ -246,26 +334,79 @@ body {
             bottom: $spacing-large;
         }
 
-        &:not(#{&}--home)::after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0px;
-            height: 2px;
-            background-color: $color-brand;
-            transition: width 100ms ease-in-out 0ms;
+        &--contact,
+        &--about,
+        &--instagram,
+        &--blog {
+            @media ($media-medium) {
+                position: relative;
+                top: initial;
+                right: initial;
+                bottom: initial;
+                left: initial;
+            }
         }
 
-        &:hover::after,
-        &--current::after {
+        span {
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: $spacing-small * -1;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0px;
+                height: 2px;
+                background-color: $color-brand;
+                transition: width 100ms ease-in-out 0ms;
+            }
+        }
+
+        &:hover span::after,
+        &--current span::after {
             width: 45px !important; 
         }
     }
+
+    &__hamburger-checkbox:not(:checked) ~ &__menu {
+        @media ($media-medium) {
+            display: none;
+        }
+    }
+    &__hamburger-checkbox:checked ~ &__menu {
+        @media ($media-medium) {
+            display: block;
+        }
+    }
+    &__hamburger-checkbox:checked ~ &__hamburger {
+        z-index: 1;
+
+        .nav__hamburger-line {
+            &:nth-child(1) { opacity: 0; transform: translateY(6px); }
+            &:nth-child(2) { opacity: 0; }
+            &:nth-child(3) { opacity: 0; transform: translateY(-6px); }
+            &:nth-child(4) { opacity: 1; transform: rotate(45deg); }
+            &:nth-child(5) { opacity: 1; transform: rotate(-45deg); }
+        }
+    }
+
+    &--theme-light &__item {
+        color: $color-text-light;
+        font-weight: normal;
+    }
+
+    &--theme-dark &__item {
+        // this is the default
+    }
 }
 
+// main {
+//     background-image: url($base-url + "/assets/img/trees2.png");
+//     background-position: -13px -14px;
+//     background-repeat: no-repeat;
+// }
 
 main {
     display: flex;
@@ -320,11 +461,11 @@ main {
     align-items: center;
     width: 100%;
     overflow: hidden;
-    margin-top: ($spacing-huge * 2) + $spacing-regular; // account for the nav
+    margin-top: $nav-height-large;
 
     @media ($media-medium) {
         padding: 0 $spacing-large;
-        margin-top: ($spacing-huge * 2) + $spacing-regular - $spacing-small; // account for the nav
+        margin-top: $nav-height-small;
     }
 
     & > * + * {
