@@ -365,4 +365,17 @@ a {
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
+
+.trees {
+    position: relative;
+    height: 0;
+    opacity: 0.5;
+
+    .tree {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        fill: $color-brand;
+    }
 }
