@@ -12,12 +12,6 @@
       <div class="bg-video" data-js="bg-video" data-bg-video-id="261644461">
         <div class="bg-video__sizing" data-bg-video-player-target></div>
       </div>
-    {% elsif page.bg_image %}
-      {% for file in site.static_files %}
-        {% if file.name == page.bg_image %}
-          <div class="aboutbg" style="background-image: url({{ file.path }});"></div>
-        {% endif %}
-      {% endfor %}
     {% endif %}
 
     {% include nav.html %}
