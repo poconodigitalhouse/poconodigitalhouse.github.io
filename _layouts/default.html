@@ -22,8 +22,9 @@
 
     {% if page.type == 'home' %}
       {% include demo-modal.html %}
-      <script src="https://player.vimeo.com/api/player.js"></script>
-      <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     {% endif %}
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>

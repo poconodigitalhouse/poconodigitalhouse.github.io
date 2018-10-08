@@ -166,10 +166,34 @@ var ANIMATION_PREFIX = 'animation__';
 var ANIMATION_DURATION = {
   default: 300,
   'show-modal': 1300,
+  'copied-notification': 1500,
 }
 var ANIMATION_BUFFER = 160;
 var ENTER = 'enter';
 var EXIT = 'exit';
+
+// https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f
+function copyToClipboard(str) {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  const selected =
+    document.getSelection().rangeCount > 0
+      ? document.getSelection().getRangeAt(0)
+      : false;
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
+}
+
+
 
 function positionVideo(player, container) {
   return Promise.all([
@@ -284,6 +308,9 @@ function classListPromise(node, method, className) {
 
 function initDemoModal(bg_player) {
   var modal = document.querySelector('[data-js="modal"]');
+
+  if (!modal) return;
+
   var modal_open_btn = document.querySelector('[data-modal="open-btn"]');
   var modal_close_btn = modal.querySelector('[data-modal="close-btn"]');
   var node_to_measure = modal.querySelector('[data-modal="node-to-measure"]');
@@ -354,6 +381,9 @@ function initBgVideo() {
   }
 
   var bg_video_container = document.querySelector('[data-js="bg-video"');
+
+  if (!bg_video_container) return;
+
   var player_container = bg_video_container.querySelector('[data-bg-video-player-target]');
   var video_player = new Vimeo.Player(
     player_container,
@@ -383,7 +413,27 @@ function initBgVideo() {
   return video_player;
 }
 
+function initEmailCopy(e) {
+  var COPIED_CLASS = 'copied';
+  var target = document.querySelector('[data-js="copy"]');
+
+  if (!target) return;
+
+  function handleCopy(e) {
+    e.preventDefault()
+    var content = target.getAttribute('data-copy');
+    copyToClipboard(content);
+    target.classList.add(COPIED_CLASS);
+    setTimeout(function() {
+      target.classList.remove(COPIED_CLASS);
+    }, ANIMATION_DURATION['copied-notification'] + ANIMATION_BUFFER);
+  }
+
+  target.addEventListener('click', handleCopy, false);
+}
+
 document.addEventListener('DOMContentLoaded', function(event) {
   var bg_video_player = initBgVideo();
   initDemoModal(bg_video_player);
+  initEmailCopy();
 }, false);

@@ -318,6 +318,52 @@ main {
             line-height: 1.08;
         }        
     }
+
+    @keyframes copied-notification {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+        6% {
+            opacity: 1;
+        }
+        20% {
+            opacity: 1;
+            transform: translate(-50%, -100%) scale(1);
+        }
+        80% {
+            opacity: 1;
+            transform: translate(-50%, -100%) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -100%) scale(0.95);
+        }
+    }
+
+    .copied {
+        position: relative;
+
+        &::after {
+            content: 'copied to clipboard';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            background: $color-background-dark;
+            padding: $spacing-small $spacing-regular;
+            font-size: 16px;
+            font-weight: normal;
+            color: $color-text-light;
+            border-radius: 10px;
+
+            animation-name: copied-notification;
+            animation-duration: 1500ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+    }
 }
 
 .about {
