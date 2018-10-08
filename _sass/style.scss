@@ -36,161 +36,6 @@ body {
     color: $color-text-dark;
 }
 
-.bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000000;
-        font-size: 12px;
-        opacity: 1;
-        transition: opacity 300ms linear 0ms;
-    }
-    &.js-loaded::after {
-        opacity: 0;
-    }
-
-    &__sizing {
-        position: relative;
-        // these get overwritten by JS
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-    }
-
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    background-color: rgba(#000000, 0.9);
-
-    &.is-open {
-        display: block;
-    }
-
-    // If you touch any of these transition timings, remember to update
-    // the JS variables in /assets/js/main.js
-
-    @at-root .animation__show-modal__enter#{&} {
-        opacity: 0;
-        transition: all 100ms linear 0ms;
-    }
-    @at-root .animation__show-modal__enter.animation__show-modal__enter-active#{&} {
-        opacity: 1;
-    }
-    @at-root .animation__show-modal__exit#{&} {
-        opacity: 1;
-        transition: all 100ms linear 0ms;
-    }
-    @at-root .animation__show-modal__exit.animation__show-modal__exit-active#{&} {
-        opacity: 0;
-    }
-
-    &__upper-bound {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1);
-        width: 85%;
-        height: 85%;
-
-        @media ($media-small-vertical) {
-            height: 65%;
-        }
-
-        @at-root .animation__show-modal__enter & {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.95);
-            transition: all 300ms $ease-out-quad 300ms;
-        }
-        @at-root .animation__show-modal__enter.animation__show-modal__enter-active & {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-    }
-
-    &__container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000000;
-    }
-
-    &__video-wrapper,
-    iframe {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    &__close-btn {
-        display: none;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translateX(calc(100% + 16px));
-        cursor: pointer;
-        // -- these remove the <button> styles --
-        background-color: transparent;
-        color: #ffffff;
-        padding: 0;
-        border: none;
-        margin: 0;
-        // ---
-
-        @media ($media-small) {
-            transform: translateY(calc(-100% - 16px));
-        }
-        @media ($media-small-vertical) {
-            transform: translateX(calc(100% + 16px));
-        }
-
-        @at-root .is-open & {
-            display: inline-block;
-            transition: all 100ms linear 0ms;
-        }
-
-        @at-root .animation__show-modal__enter & {
-            opacity: 0;
-            transition: all 300ms $ease-out-quad 1000ms;
-        }
-        @at-root .animation__show-modal__enter.animation__show-modal__enter-active & {
-            opacity: 1;
-        }
-
-        &:hover {
-            opacity: 0.5;
-        }
-    }
-}
-
 .nav {
     position: relative;
     z-index: 1;
@@ -603,6 +448,161 @@ main {
                 width: calc(100% + #{$spacing-large * 2});
                 margin: 0 $spacing-large * -1;
             }
+        }
+    }
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        font-size: 12px;
+        opacity: 1;
+        transition: opacity 300ms linear 0ms;
+    }
+    &.js-loaded::after {
+        opacity: 0;
+    }
+
+    &__sizing {
+        position: relative;
+        // these get overwritten by JS
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(#000000, 0.9);
+
+    &.is-open {
+        display: block;
+    }
+
+    // If you touch any of these transition timings, remember to update
+    // the JS variables in /assets/js/main.js
+
+    @at-root .animation__show-modal__enter#{&} {
+        opacity: 0;
+        transition: all 100ms linear 0ms;
+    }
+    @at-root .animation__show-modal__enter.animation__show-modal__enter-active#{&} {
+        opacity: 1;
+    }
+    @at-root .animation__show-modal__exit#{&} {
+        opacity: 1;
+        transition: all 100ms linear 0ms;
+    }
+    @at-root .animation__show-modal__exit.animation__show-modal__exit-active#{&} {
+        opacity: 0;
+    }
+
+    &__upper-bound {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        width: 85%;
+        height: 85%;
+
+        @media ($media-small-vertical) {
+            height: 65%;
+        }
+
+        @at-root .animation__show-modal__enter & {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.95);
+            transition: all 300ms $ease-out-quad 300ms;
+        }
+        @at-root .animation__show-modal__enter.animation__show-modal__enter-active & {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    &__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+    }
+
+    &__video-wrapper,
+    iframe {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__close-btn {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(calc(100% + 16px));
+        cursor: pointer;
+        // -- these remove the <button> styles --
+        background-color: transparent;
+        color: #ffffff;
+        padding: 0;
+        border: none;
+        margin: 0;
+        // ---
+
+        @media ($media-small) {
+            transform: translateY(calc(-100% - 16px));
+        }
+        @media ($media-small-vertical) {
+            transform: translateX(calc(100% + 16px));
+        }
+
+        @at-root .is-open & {
+            display: inline-block;
+            transition: all 100ms linear 0ms;
+        }
+
+        @at-root .animation__show-modal__enter & {
+            opacity: 0;
+            transition: all 300ms $ease-out-quad 1000ms;
+        }
+        @at-root .animation__show-modal__enter.animation__show-modal__enter-active & {
+            opacity: 1;
+        }
+
+        &:hover {
+            opacity: 0.5;
         }
     }
 }
