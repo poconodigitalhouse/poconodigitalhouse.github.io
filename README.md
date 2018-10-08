@@ -1,10 +1,35 @@
 # Pocono Digital House
 
+## TODO
+- if this is being hosted on GitHub... [setup poconodigitalhouse.github.io repo](https://pages.github.com/#user-site)
+
+## Missing Assets
+- close-modal button
+- about page - headshot image
+- favicon
+
+## Interaction Questions
+- does the "Demo Reel" have a hover state?
+- does the Logo have a hover state?
+- did we discuss some clever nav behaviors when scrolling?
+
+## Data Questions
+- do you want specific OpenGraph data on each page?
+- do you want to set up Google Analytics
+
+### FYI: Updating Videos
+The videos are controlled by JS that reads data in the HTML.  To change the videos, edit the HTML.  There are notes next to each.
+- Demo - `/index.html`
+  - `href` is a link to the video on Vimeo.  If JS is disabled, clicking the demo button will take the user to Vimeo.
+  - `data-demo-video-id` is the video's `vimeo_id`.  It's what JS uses to load the video in the modal.
+- Home background - `/_layouts/default.html`
+  - `data-bg-video-id` is the video's `vimeo_id`.  It's what JS uses to load the video into the background.
+
 ## Useful Links
 
 Repo : [https://github.com/poconodigitalhouse/Pocono-Digital-House](https://github.com/poconodigitalhouse/Pocono-Digital-House)
 
-Served : [https://poconodigitalhouse.github.io/Pocono-Digital-House/html/](https://poconodigitalhouse.github.io/Pocono-Digital-House/html/)
+Served : [https://poconodigitalhouse.github.io/Pocono-Digital-House](https://poconodigitalhouse.github.io/Pocono-Digital-House)
 
 Local : [http://localhost:4000/](http://localhost:4000/)
 
@@ -17,21 +42,6 @@ Vimeo Player Api : [https://github.com/vimeo/player.js](https://github.com/vimeo
 GitHub Pages > Custom URL : [https://help.github.com/articles/using-a-custom-domain-with-github-pages/](https://help.github.com/articles/using-a-custom-domain-with-github-pages/)
 
 GitHub / Jekyll / Markdown Helpers : [http://jmcglone.com/guides/github-pages/#resources](http://jmcglone.com/guides/github-pages/#resources)
-
-
-## TODO
-### General
-- favicon
-- mobile-friendly
-- open graph data
-- google analytics
-- scrub markup for seo
-- break css into pieces
-- refactor css : DRY, BEM, asset scrub
-
-### GitHub Pages
-- make username.github.io repo
-- move this to there
 
 
 ## Setup
@@ -60,7 +70,7 @@ Install Jekyll et al.
 `bundle install`
 
 Start the server
-`jekyll serve` || `bundle exec jekyll serve`
+`bundle exec jekyll serve --baseurl ''`
 
 You're up an running
 `http://localhost:4000/`
@@ -71,7 +81,7 @@ You're up an running
 - install a `jinja2` syntax package
 
 
-## Notes
+## Dev Notes
 
 - pages are `.html` files in the root
 - pages *MUST* contain Front Matter
@@ -82,7 +92,6 @@ You're up an running
   ```
 - custom Front Matter variables
   - `title`: used in the window title, appended to "Pocono Digital House" (e.g. `title: About` = `Pocono Digital House | About`);
-  - `bg_image`: the filename of an image file placed in the `/assets` folder that will be used as a background for that page
-  - `type`: used to identify a specific page in the shared layout (e.g. replacing the background image with a video on the home page)
+  - `nav_theme`: sets the classname to use the light theme (white text) or the dark theme (dark-blue)
 - Asset URLs in HTML look like this: `{{ '/path/to/file/from/root.md' | relative_url }}`
 - Asset URLs in CSS looks like this: `$base-url + "/path/to/file/from/root.png"`
