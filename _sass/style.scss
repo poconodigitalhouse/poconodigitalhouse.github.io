@@ -87,7 +87,6 @@ body {
     }
 }
 
-
 .modal {
     display: none;
     position: fixed;
@@ -187,7 +186,6 @@ body {
         }
     }
 }
-
 
 .nav {
     position: relative;
@@ -402,12 +400,6 @@ body {
     }
 }
 
-// main {
-//     background-image: url($base-url + "/assets/img/trees2.png");
-//     background-position: -13px -14px;
-//     background-repeat: no-repeat;
-// }
-
 main {
     display: flex;
     flex-direction: column;
@@ -427,7 +419,6 @@ main {
     }
 }
 
-
 .home {
     display: flex;
     justify-content: center;
@@ -435,7 +426,6 @@ main {
     width: 100vw;
     min-height: 100vh;
 }
-
 
 .contact {
     display: flex;
@@ -445,15 +435,23 @@ main {
     min-height: 100vh;
     text-align: center;
 
+    @media ($media-medium) {
+        padding: 0 $spacing-large;
+    }
+
     p {
-        font-size: 2rem;
-        font-weight: bold;
+        font-size: 32px;
         line-height: 1.07;
+        font-weight: bold;
         max-width: 45ch;
         margin: $spacing-small 0;
+
+        @media ($media-small) {
+            font-size: 24px;
+            line-height: 1.08;
+        }        
     }
 }
-
 
 .about {
     display: flex;
@@ -587,7 +585,6 @@ main {
     }
 }
 
-
 .trees {
     position: relative;
     height: 0;
@@ -606,6 +603,13 @@ main {
         & > :nth-child(2) { width: 20px; transform: translate(-295px, -70px); }
         & > :nth-child(3) { width: 30px; transform: translate(110px, -100px); }
         & > :nth-child(4) { width: 30px; transform: translate(340px, -140px); }
+
+        @media ($media-small) {
+            & > :nth-child(1) { width: 30px; transform: translate(-120px, -70px); }
+            & > :nth-child(2) { width: 16px; transform: translate(10px, -35px); }
+            & > :nth-child(3) { width: 30px; transform: translate(100px, -70px); }
+            & > :nth-child(4) { display: none; }
+        }
     }
     &__contact-after {
         & > :nth-child(1) { width: 12px; transform: translate(-445px, -55px); }
@@ -613,6 +617,14 @@ main {
         & > :nth-child(3) { width: 30px; transform: translate(-140px, 95px); }
         & > :nth-child(4) { width: 18px; transform: translate(190px, 50px); }
         & > :nth-child(5) { width: 28px; transform: translate(420px, 32px); }
+
+        @media ($media-small) {
+            & > :nth-child(1) { width: 28px; transform: translate(-120px, 70px); }
+            & > :nth-child(2) { width: 30px; transform: translate(60px, 80px); }
+            & > :nth-child(3) { display: none; }
+            & > :nth-child(4) { display: none; }
+            & > :nth-child(5) { display: none; }
+        }
     }
     &__about-hero {
         & > :nth-child(1) { width: 20px; transform: translate(310px, -20px); }
