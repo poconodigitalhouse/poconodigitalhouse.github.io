@@ -90,12 +90,17 @@ body {
         color: $color-brand !important;
         text-decoration: none;
         text-transform: uppercase;
+        transition: opacity 150ms linear 0ms;
 
         @media ($media-medium) {
             top: initial;
             left: initial;
             transform: translate(0, -3px);
             height: 100%;
+        }
+
+        &:hover {
+            opacity: 0.5;
         }
     }
 
@@ -260,6 +265,11 @@ main {
 
     a {
         color: $color-text-dark;
+        transition: opacity 150ms linear 0ms;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
     h3 {
