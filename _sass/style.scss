@@ -7,13 +7,13 @@
 
 @font-face {
     font-family: "calibre";
-    font-weight: normal;
+    font-weight: $font-weight-normal;
     src: url($base-url + "/assets/fonts/calibre-regular.otf");
 }
 
 @font-face {
     font-family: "calibre";
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     src: url($base-url + "/assets/fonts/calibre-semibold.otf");
 }
 
@@ -65,7 +65,7 @@ body {
         align-items: center;
         height: $spacing-huge;
         color: $color-text-dark;
-        font-weight: bold;
+        font-weight: $font-weight-semibold;
         text-decoration: none;
 
         @media ($media-medium) {
@@ -241,7 +241,6 @@ body {
 
     &--theme-light &__item {
         color: $color-text-light;
-        font-weight: normal;
     }
 
     &--theme-light &__hamburger-line {
@@ -309,7 +308,7 @@ main {
     p {
         font-size: 32px;
         line-height: 1.07;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         max-width: 45ch;
         margin: $spacing-small 0;
 
@@ -354,7 +353,7 @@ main {
             background: $color-background-dark;
             padding: $spacing-small $spacing-regular;
             font-size: 16px;
-            font-weight: normal;
+            font-weight: $font-weight-normal;
             color: $color-text-light;
             border-radius: 10px;
 
