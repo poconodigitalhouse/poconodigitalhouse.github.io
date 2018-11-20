@@ -1,23 +1,9 @@
 # Pocono Digital House
 
-## TODO
-- if this is being hosted on GitHub... [setup poconodigitalhouse.github.io repo](https://pages.github.com/#user-site)
+## SITE
+- [poconodigitalhouse.github.io](https://poconodigitalhouse.github.io)
 
-## Missing Assets
-- close-modal button
-- about page - headshot image
-- favicon
-
-## Interaction Questions
-- does the "Demo Reel" have a hover state?
-- does the Logo have a hover state?
-- did we discuss some clever nav behaviors when scrolling?
-
-## Data Questions
-- do you want specific OpenGraph data on each page?
-- do you want to set up Google Analytics
-
-### FYI: Updating Videos
+## Updating Videos
 The videos are controlled by JS that reads data in the HTML.  To change the videos, edit the HTML.  There are notes next to each.
 - Demo - `/index.html`
   - `href` is a link to the video on Vimeo.  If JS is disabled, clicking the demo button will take the user to Vimeo.
