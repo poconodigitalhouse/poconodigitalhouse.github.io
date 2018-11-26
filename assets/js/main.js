@@ -380,7 +380,7 @@ function initBgVideo() {
     return;
   }
 
-  var bg_video_container = document.querySelector('[data-js="bg-video"');
+  var bg_video_container = document.querySelector('[data-js="bg-video"]');
 
   if (!bg_video_container) return;
 
