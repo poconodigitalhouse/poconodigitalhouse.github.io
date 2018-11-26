@@ -99,6 +99,11 @@ body {
             height: 100%;
         }
 
+        @media ($media-tiny) {
+            font-size: 32px;
+            letter-spacing: 0.5px;
+        }
+
         &:hover {
             opacity: 0.5;
         }
