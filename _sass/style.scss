@@ -186,7 +186,7 @@ body {
             bottom: $spacing-large;
             left: $spacing-mega;
         }
-        &--blog {
+        &--work {
             right: $spacing-mega;
             bottom: $spacing-large;
         }
@@ -194,7 +194,7 @@ body {
         &--contact,
         &--about,
         &--instagram,
-        &--blog {
+        &--work {
             @media ($media-medium) {
                 position: relative;
                 top: initial;
